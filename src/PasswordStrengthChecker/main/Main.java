@@ -21,7 +21,7 @@ if (password == null || password.trim().isEmpty()) {
         StrengthChecker checker = new StrengthChecker();
         Result result = checker.checkPassword(password);
 
-        System.out.println("\nStrength: " + result.getStrength());
+       System.out.println("\nPassword Strength: " + result.getStrength());
 
         if (!result.getSuggestions().isEmpty()) {
             System.out.println("Suggestions:");
