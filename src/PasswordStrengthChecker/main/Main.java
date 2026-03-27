@@ -1,0 +1,34 @@
+package PasswordStrengthChecker.main;
+
+import java.util.Scanner;
+import PasswordStrengthChecker.service.StrengthChecker;
+import PasswordStrengthChecker.model.Result;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter password: ");
+        String password = sc.nextLine();
+
+        if (password == null || password.trim().isEmpty()) {
+            System.out.println("Error: Password cannot be empty!");
+            return;
+        }
+
+        StrengthChecker checker = new StrengthChecker();
+        Result result = checker.checkPassword(password);
+
+        System.out.println("\nStrength: " + result.getStrength());
+
+        if (!result.getSuggestions().isEmpty()) {
+            System.out.println("Suggestions:");
+            for (String s : result.getSuggestions()) {
+                System.out.println("- " + s);
+            }
+        } else {
+            System.out.println("Good password!");
+        }
+    }
+}
