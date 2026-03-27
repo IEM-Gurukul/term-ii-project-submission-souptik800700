@@ -9,7 +9,7 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Enter password: ");
+        System.out.println("Enter a password to check its strength (use letters, numbers, special characters):");
         String password = sc.nextLine();
 
         if (password == null || password.trim().isEmpty()) {
