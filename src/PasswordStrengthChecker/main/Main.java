@@ -12,10 +12,10 @@ public class Main {
         System.out.println("Enter a password to check its strength (use letters, numbers, special characters):");
         String password = sc.nextLine();
 
-        if (password == null || password.trim().isEmpty()) {
-            System.out.println("Error: Password cannot be empty!");
-            return;
-        }
+if (password == null || password.trim().isEmpty()) {
+    System.out.println("Error: Password cannot be empty. Please try again.");
+    return;
+}
 
         StrengthChecker checker = new StrengthChecker();
         Result result = checker.checkPassword(password);
