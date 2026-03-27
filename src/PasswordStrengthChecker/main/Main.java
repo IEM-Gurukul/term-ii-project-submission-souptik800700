@@ -13,8 +13,9 @@ public class Main {
         String password = sc.nextLine();
 
 if (password == null || password.trim().isEmpty()) {
-    System.out.println("Error: Password cannot be empty. Please try again.");
+    System.out.println("Error: Password cannot be empty or only spaces.");
     return;
+}
 }
 
         StrengthChecker checker = new StrengthChecker();
