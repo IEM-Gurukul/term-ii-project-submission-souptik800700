@@ -2,6 +2,11 @@ package PasswordStrengthChecker.service;
 
 import java.util.*;
 import PasswordStrengthChecker.rules.*;
+import rules.LengthRule;
+import rules.NumberRule;
+import rules.Rule;
+import rules.SpecialCharRule;
+import rules.UppercaseRule;
 import PasswordStrengthChecker.model.Result;
 
 public class StrengthChecker {
@@ -31,9 +36,15 @@ public class StrengthChecker {
 
         String strength;
 
-        if (score <= 1) strength = "Weak";
-        else if (score <= 3) strength = "Medium";
-        else strength = "Strong";
+if (password.length() < 6) {
+    strength = "Very Weak";
+} else if (score <= 1) {
+    strength = "Weak";
+} else if (score <= 3) {
+    strength = "Medium";
+} else {
+    strength = "Strong";
+}
 
         return new Result(strength, suggestions);
     }
