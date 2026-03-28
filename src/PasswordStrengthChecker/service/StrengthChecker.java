@@ -1,13 +1,8 @@
 package PasswordStrengthChecker.service;
 
-import java.util.*;
-import PasswordStrengthChecker.rules.*;
-import rules.LengthRule;
-import rules.NumberRule;
-import rules.Rule;
-import rules.SpecialCharRule;
-import rules.UppercaseRule;
 import PasswordStrengthChecker.model.Result;
+import PasswordStrengthChecker.rules.*;
+import java.util.*;
 
 public class StrengthChecker {
 
