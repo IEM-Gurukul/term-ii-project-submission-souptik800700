@@ -20,6 +20,7 @@ public class StrengthChecker {
         rules.add(new UppercaseRule());
         rules.add(new NumberRule());
         rules.add(new SpecialCharRule());
+        rules.add(new LowercaseRule());
     }
 
     public Result checkPassword(String password) {
