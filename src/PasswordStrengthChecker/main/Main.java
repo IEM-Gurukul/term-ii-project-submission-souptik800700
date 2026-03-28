@@ -6,6 +6,7 @@ import PasswordStrengthChecker.model.Result;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("=== Password Strength Checker ===");
 
         Scanner sc = new Scanner(System.in);
 
