@@ -46,6 +46,9 @@ if (password.length() < 6) {
 } else {
     strength = "Strong";
 }
+if (password.length() > 12 && score >= 4) {
+    strength = "Very Strong";
+}
 
         return new Result(strength, suggestions);
     }
