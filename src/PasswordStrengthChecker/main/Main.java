@@ -1,36 +1,47 @@
 package PasswordStrengthChecker.main;
 
-import java.util.Scanner;
-import PasswordStrengthChecker.service.StrengthChecker;
 import PasswordStrengthChecker.model.Result;
+import PasswordStrengthChecker.service.StrengthChecker;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("=== Password Strength Checker ===");
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Enter a password to check its strength (use letters, numbers, special characters):");
-        String password = sc.nextLine();
+        System.out.println("=== Password Strength Checker ===");
 
-if (password == null || password.trim().isEmpty()) {
-    System.out.println("Error: Password cannot be empty or only spaces.");
-    return;
-}
-}
+        while (true) {
+            System.out.print("Enter password: ");
+            String password = sc.nextLine();
 
-        StrengthChecker checker = new StrengthChecker();
-        Result result = checker.checkPassword(password);
-
-       System.out.println("\nPassword Strength: " + result.getStrength());
-
-        if (!result.getSuggestions().isEmpty()) {
-            System.out.println("Suggestions:");
-            for (String s : result.getSuggestions()) {
-                System.out.println("- " + s);
+            if (password.equalsIgnoreCase("exit")) {
+                System.out.println("Exiting program...");
+                break;
             }
-        } else {
-            System.out.println("Good password!");
+
+            if (password == null || password.trim().isEmpty()) {
+                System.out.println("Error: Password cannot be empty.");
+                continue;
+            }
+
+            StrengthChecker checker = new StrengthChecker();
+            Result result = checker.checkPassword(password);
+
+            System.out.println("\nPassword Strength: " + result.getStrength());
+
+            if (!result.getSuggestions().isEmpty()) {
+                System.out.println("\nSuggestions to improve:");
+                for (String s : result.getSuggestions()) {
+                    System.out.println("• " + s);
+                }
+            } else {
+                System.out.println("Good password!");
+            }
+
+            System.out.println("\nType 'exit' to quit or press Enter to continue.");
         }
+
+        sc.close();
     }
 }
