@@ -15,7 +15,7 @@ This project aims to address this issue by developing a password strength checke
 
 ## Target User
 
-General users, students, and individuals creating passwords for online platforms who need guidance in choosing secure passwords.
+General users, students, and individuals creating passwords for online platforms who need guidance in choosing secure passwords
 
 ---
 
